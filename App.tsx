@@ -32,6 +32,17 @@ const TweetDetails = () => (
  * use this as react component.
  */
 const Stack = createNativeStackNavigator();
+/**
+ *
+ * Inside the Stack.Navigator, we define bunch of screen component.
+ * With this screen component, we can define our routes.
+ */
+const StackNavigator = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="Tweets" component={Tweets} />
+    <Stack.Screen name="TweetsDetails" component={TweetDetails} />
+  </Stack.Navigator>
+);
 
 export default function App() {
   return <View></View>;
