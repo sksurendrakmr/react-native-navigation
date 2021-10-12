@@ -2,6 +2,7 @@ import React, {ReactNode} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
 
 type ScreenProps = {
   children: ReactNode;
@@ -38,14 +39,24 @@ const Stack = createNativeStackNavigator();
  * With this screen component, we can define our routes.
  */
 const StackNavigator = () => (
-  <Stack.Navigator>
+  <Stack.Navigator initialRouteName="Tweets">
     <Stack.Screen name="Tweets" component={Tweets} />
     <Stack.Screen name="TweetsDetails" component={TweetDetails} />
   </Stack.Navigator>
 );
 
+/**
+ *
+ * Now we have navigator(here StackNavigator), we have to wrapped this inside an
+ * NavigationContainer.
+ *
+ */
 export default function App() {
-  return <View></View>;
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
