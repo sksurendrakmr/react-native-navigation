@@ -1,0 +1,10 @@
+In React navigation, we have three types of navigators.
+ 
+1)  Stack Navigator => Takes the user from one screen to another. It's very similar 
+    to navigation built to web browser so we can push or pop screens from the stack.
+
+2) Tab Navigator => For implementing the tab.
+3) Drawer Navigator => For implementing the drawer.
+
+
+Each navigator is implemented in a seperate library.
